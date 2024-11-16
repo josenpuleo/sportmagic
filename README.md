@@ -1,4 +1,5 @@
 Sportmagic
+
 Sportmagic is a cryptocurrency-based project that focuses on revolutionizing the gaming and blockchain ecosystem. With seamless integration on the Polygon blockchain, Sportmagic combines innovative features like live token balances, swaps, and ICO participation, delivering a powerful and user-friendly experience.
 
 Table of Contents
