@@ -21,25 +21,31 @@ Displaying token balances across wallets.
 Real-time price updates for supported cryptocurrencies.
 A fully functional token swap feature.
 An upcoming ICO participation mechanism.
+
 Features
 Current Features
 Multi-Wallet Support: Easily connect wallets using Reown WalletConnect integration.
 Live Token Balances: View the balances of FRT, POL, ETH, and SMC tokens in real-time.
 Swapping Tokens: Functional token swap interface for FRT, POL, ETH, and future SMC token support.
 ICO Participation: Future release will include a platform to participate in the Sportmagic ICO.
+
 Upcoming Features
 Advanced analytics and tracking for user wallets.
 Gaming platform integration.
 Secure token staking and rewards.
 Technology Stack
+
 Blockchain
 Polygon Chain: Fast and cost-efficient blockchain for handling transactions.
+
 Frontend
 React.js: For building the user interface.
 Tailwind CSS: For modern and responsive styling.
+
 Backend
 Node.js: Server-side scripting.
 Express.js: Backend framework for handling API requests.
+
 Dependencies
 Wagmi & Viem: For blockchain interactions and wallet integration.
 Reown AppKit: For wallet connection and token management.
@@ -109,6 +115,11 @@ git commit -m "Add new feature"
 git push origin feature-name
 Open a pull request to the site-app branch with a detailed description of your changes.
 Please see our Contributing Guidelines for more details.
+
+Badges
+[![Node.js CI](https://github.com/josenpuleo/sportmagic/actions/workflows/node.js.yml/badge.svg)](https://github.com/josenpuleo/sportmagic/actions/workflows/node.js.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 Security
 If you find a security vulnerability, please report it via email at security@sportmagic.app. We aim to address all security concerns within 48 hours.
