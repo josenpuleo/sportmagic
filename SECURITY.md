@@ -1,4 +1,5 @@
 Security Policy
+
 We at Sportmagic take security seriously. Ensuring the safety of our platform, users, and contributors is a top priority. This document outlines how users and contributors can report vulnerabilities and the process we follow to address security concerns.
 
 Reporting a Vulnerability
