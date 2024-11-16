@@ -1,0 +1,64 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI for AlmaLinux
+
+on:
+  push:
+    branches: [ "site-app" ]
+  pull_request:
+    branches: [ "site-app" ]
+
+jobs:
+  build:
+
+    # Use AlmaLinux 9 as the runner
+    runs-on: custom-alma-linux-9
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+        # Reduced to relevant Node.js versions for compatibility and testing purposes
+
+    steps:
+    # 1. Check out repository
+    - uses: actions/checkout@v4
+
+    # 2. Set up AlmaLinux 9 with Node.js
+    - name: Install AlmaLinux Dependencies
+      run: |
+        sudo dnf -y update
+        sudo dnf -y install gcc-c++ make
+        sudo dnf -y module enable nodejs:18
+        sudo dnf -y install nodejs npm
+
+    # 3. Use Node.js version from matrix
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    # 4. Install project dependencies
+    - name: Install Dependencies
+      run: npm ci
+
+    # 5. Run build process
+    - name: Build Application
+      run: npm run build --if-present
+
+    # 6. Run tests
+    - name: Run Tests
+      run: npm test
+
+    # 7. Lint the code (Optional)
+    - name: Lint Code
+      run: npm run lint --if-present
+
+    # 8. Generate and upload test coverage report (Optional)
+    - name: Upload Test Coverage
+      if: success()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-coverage
+        path: ./coverage
